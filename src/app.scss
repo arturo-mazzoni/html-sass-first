@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$height_90: 90px;
+$color_one: lightgrey;
+$color_two: lightgreen;
+$color_three: lightblue;
+$color_four: coral;
+
+@mixin clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  header, footer {
+    height: $height_90;
+  }
+
+  header {
+    background-color: $color_one;
+  }
+
+  footer {
+    background-color: $color_two;
+  }
+
+  .main {
+    height: calc(100vh - #{$height_90 * 2});
+    .left, .right {
+      width: 25%;
+      height: calc(100vh - #{$height_90 * 2});
+      background-color: $color_three;
+      float: left;
+    }
+    .center {
+      width: 50%;
+      height: calc(100vh - #{$height_90 * 2});
+      background-color: $color_four;
+      float: left;
+    }
+    &:after {
+      @include clearfix;
+    }
+  }
+
+
+}

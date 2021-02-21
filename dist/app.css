@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container header, .container footer {
+  height: 90px;
+}
+.container header {
+  background-color: lightgrey;
+}
+.container footer {
+  background-color: lightgreen;
+}
+.container .main {
+  height: calc(100vh - 180px);
+}
+.container .main .left, .container .main .right {
+  width: 25%;
+  height: calc(100vh - 180px);
+  background-color: lightblue;
+  float: left;
+}
+.container .main .center {
+  width: 50%;
+  height: calc(100vh - 180px);
+  background-color: coral;
+  float: left;
+}
+.container .main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
